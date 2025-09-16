@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 15px 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: gold;
+    }
+
+    .help {
+      margin-left: auto;
+    }
+
+    /* About Us Section */
+    .about-section {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+    }
+
+    .about-section h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      color: #555;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    /* Team Grid */
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 0 40px 50px;
+    }
+
+    .team-member {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      background: #ddd;
+    }
+
+    .team-member h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .team-member p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+      text-align: justify;
+      min-height: 100px; /* Makes space for longer text */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <ul>
+      <li class="help"><a href="help.html">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Us Section -->
+  <section class="about-section">
+    <h1>About Us</h1>
+    <p>
+      Welcome to our Task Management System! This is where you’ll get to know the team behind the project.  
+      We are 9 passionate individuals working together to make managing tasks simple and efficient.  
+      Here are our members:
+    </p>
+
+    <div class="team-container">
+      <div class="team-member">
+        <img src="" alt="Member 1">
+        <h3>Member 1</h3>
+        <p>Leader of the group. Handles project direction, ensures smooth workflow, and supports the team.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 2">
+        <h3>Denzell M. Nacario</h3>
+        <p>Frontend developer focusing on the design, UI/UX, and making the system user-friendly.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 3">
+        <h3>Member 3</h3>
+        <p>Backend developer ensuring that all data flows securely and efficiently in the system.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 4">
+        <h3>Member 4</h3>
+        <p>Database manager handling structure, storage, and performance of all project-related data.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 5">
+        <h3>Member 5</h3>
+        <p>Tester who checks for bugs, errors, and ensures the app runs smoothly before releases.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 6">
+        <h3>Member 6</h3>
+        <p>Content writer creating documentation, descriptions, and explanations for the project.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 7">
+        <h3>Member 7</h3>
+        <p>Researcher providing important resources and technical references for development.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 8">
+        <h3>Member 8</h3>
+        <p>Assistant project coordinator, helping organize tasks and keeping track of deadlines.</p>
+      </div>
+      <div class="team-member">
+        <img src="" alt="Member 9">
+        <h3>Member 9</h3>
+        <p>[Leave this blank for your custom description about yourself]</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
