@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small extra styles just for login layout */
+    .login-wrapper {
+      min-height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .login-card h2 { margin: 0 0 10px; }
+    .login-card p.sub { margin: 0 0 18px; color: #666; }
+
+    .login-card input[type="text"],
+    .login-card input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .login-card .msg {
+      margin-top: 12px;
+      color: #e74c3c;
+      min-height: 20px;
+    }
+
+    .small-links {
+      margin-top: 12px;
+      display:flex;
+      justify-content:space-between;
+      font-size:0.9rem;
+    }
+    .small-links a { color: #333; text-decoration:none; }
+    .small-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="Login.html">Home</a></li>
+      <li><a href="Login.html">Tasks</a></li>
+      <li><a href="Login.html">About Us</a></li>
+      <li class="help"><a href="help.html">Help</a></li>
+    </ul>
+  </nav>
+
+  <main class="login-wrapper">
+    <div class="login-card" role="region" aria-labelledby="loginTitle">
+      <h2 id="loginTitle">Sign in to Task Manager</h2>
+      <p class="sub">Demo login — use the credentials below</p>
+
+      <form id="loginForm" onsubmit="return false;">
+        <input id="username" type="text" placeholder="Username" autocomplete="username">
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+        <button id="loginBtn" type="submit">Log in</button>
+
+        <div class="msg" id="msg"></div>
+
+        <div class="small-links">
+          <a href="#" id="showCreds">Show demo creds</a>
+          <a href="help.html">Need help?</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    
+    const DEMO_USERNAME = "admin";
+    const DEMO_PASSWORD = "1234";
+
+    const loginBtn = document.getElementById("loginBtn");
+    const msg = document.getElementById("msg");
+    const usernameEl = document.getElementById("username");
+    const passwordEl = document.getElementById("password");
+    const showCreds = document.getElementById("showCreds");
+
+    showCreds.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Demo credentials → username: " + DEMO_USERNAME + "  password: " + DEMO_PASSWORD);
+    });
+
+    function showMessage(text, color = "#e74c3c") {
+      msg.style.color = color;
+      msg.textContent = text;
+    }
+
+    loginBtn.addEventListener("click", () => {
+      const u = usernameEl.value.trim();
+      const p = passwordEl.value;
+
+      if (!u || !p) {
+        showMessage("Please enter username and password.");
+        return;
+      }
+
+      // Very simple client-side check (not secure)
+      if (u === DEMO_USERNAME && p === DEMO_PASSWORD) {
+        showMessage("Login successful! Redirecting...", "#159b87");
+
+        // Optional: store a demo 'logged in' flag in sessionStorage
+        sessionStorage.setItem("demoLoggedIn", "true");
+        // Redirect to main app page
+        setTimeout(() => {
+          window.location.href = "task.html";
+        }, 800);
+      } else {
+        showMessage("Incorrect username or password.");
+      }
+    });
+
+    // Protect pages: if user navigates to task.html but is not "logged in",
+    // you can check sessionStorage in task.html and redirect back to login.
+  </script>
+</body>
+</html>
