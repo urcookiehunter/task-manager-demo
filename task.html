@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Task Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <nav>
+  <ul class="navbar">
+    <li><a href="Page.html">Home</a></li>
+    <li><a href="task.html">Tasks</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li class="help"><a href="#">Help</a></li>
+  </ul>
+</nav>
+
+
+
+    <section>
+        <h1 style="text-align:center; margin:20px;">My Tasks</h1>
+        
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Finish Math Homework</td>
+                    <td>Sept 20, 2025</td>
+                    <td>Pending</td>
+                    <td><button>Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Submit English Project</td>
+                    <td>Sept 22, 2025</td>
+                    <td>Completed</td>
+                    <td><button>Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Science Lab Report</td>
+                    <td>Sept 25, 2025</td>
+                    <td>Pending</td>
+                    <td><button>Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Group Study Meeting</td>
+                    <td>Sept 28, 2025</td>
+                    <td>In Progress</td>
+                    <td><button>Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+     
+        <button class="add-task" id="openBtn">+ Add New Task</button>
+    </section>
+
+  
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Add a New Task</h2>
+            <form>
+                <input type="text" placeholder="Task Name" style="width:90%; padding:10px; margin:10px 0;"><br>
+                <input type="date" style="width:90%; padding:10px; margin:10px 0;"><br>
+                <select style="width:90%; padding:10px; margin:10px 0;">
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                </select><br>
+                <button type="submit" class="add-task">Save Task</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
